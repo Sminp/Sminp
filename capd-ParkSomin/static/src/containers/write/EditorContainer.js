@@ -174,7 +174,7 @@ export default function EditorContainer() {
         account: account,
         body: write.body,
       });
-      console.log(promise);
+      console.log('테마 생성 중입니다',promise);
 
       const getData = () => {
         promise.then((res) => {

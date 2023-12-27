@@ -91,7 +91,7 @@ const EmojiName = styled.div`
 export default function Emoji({ tempEmoji, onClick }) {
   const tempEmotion = (tempEmoji ? tempEmoji : 'happiness')
 
-  const [checkedEmoji, setCheckedEmoji] = useState(tempEmoji)
+  const [checkedEmoji, setCheckedEmoji] = useState(tempEmotion)
   // 배열로 저장
   const emoji = emojiList.filter((name) => name.emojiId === tempEmoji);
 
