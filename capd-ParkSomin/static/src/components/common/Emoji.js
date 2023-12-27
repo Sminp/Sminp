@@ -93,7 +93,9 @@ export default function Emoji({ tempEmoji, onClick }) {
   // 배열로 저장
   const emoji = emojiList.filter((name) => name.emojiId === tempEmoji);
 
-  emoji ? setCheckedEmoji(emoji[0]) : setCheckedEmoji(emojiList[2])
+  setInterval(()=> {  emoji ? setCheckedEmoji(emoji[0]) : setCheckedEmoji(emojiList[2])}, 3000
+
+  );
 
   const others = emojiList.map((name) => {
     return (
