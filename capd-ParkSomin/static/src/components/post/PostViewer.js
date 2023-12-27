@@ -84,9 +84,9 @@ export default function PostViewer({ account, post, onEdit, onRemove }) {
   //   return null;
   // }
 
-  const { id, title, body, emoji, updatedAt, theme } = post;
+  const { id, title, body, sentiment, updatedAt, theme } = post;
 
-  const emojiIndex = emojiList.findIndex((item) => item.emojiId === emoji);
+  const emojiIndex = emojiList.findIndex((item) => item.emojiId === sentiment);
 
   return (
     <PostViewerBlock
