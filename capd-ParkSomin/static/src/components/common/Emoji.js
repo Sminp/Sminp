@@ -89,9 +89,7 @@ const EmojiName = styled.div`
 `;
 
 export default function Emoji({ tempEmoji, onClick }) {
-  const tempEmotion = (tempEmoji ? tempEmoji : 'happiness')
-
-  const [checkedEmoji, setCheckedEmoji] = useState(tempEmotion)
+  const [checkedEmoji, setCheckedEmoji] = useState('happiness')
   // 배열로 저장
   const emoji = emojiList.filter((name) => name.emojiId === tempEmoji);
 
@@ -99,12 +97,10 @@ export default function Emoji({ tempEmoji, onClick }) {
     if(emoji[0]===undefined || !emoji)
     {
       setCheckedEmoji(emojiList[2])
-      console.log('그냥', emojiList[2])
     } else{
       setCheckedEmoji(emoji[0])
-      console.log('선택', emoji[0])
     }
-  console.log(checkedEmoji)}, 3000
+}, 10000
 
   );
 

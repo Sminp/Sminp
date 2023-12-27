@@ -135,7 +135,6 @@ export default function EditorContainer() {
           ...write,
           createdAt: new Date(),
         });
-        console.log(write.emoji);
         const promise = writePost({
           title: write.title,
           body: write.body,
