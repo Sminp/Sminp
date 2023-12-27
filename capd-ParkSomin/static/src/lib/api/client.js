@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const client = axios.create({
-  baseURL: 'http://3.35.118.224:8080',
+  baseURL: 'http://117.110.137.172:8080',
 });
 
 /*
