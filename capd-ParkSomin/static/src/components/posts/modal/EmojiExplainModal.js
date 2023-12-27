@@ -24,7 +24,7 @@ const Content = styled.div`
 `;
 
 export default function EmojiExplainModal({ close }) {
-  const [checkedEmoji, setCheckedEmoji] = useState('Happy');
+  const [checkedEmoji, setCheckedEmoji] = useState('happiness');
 
   const handleCheckedEmoji = (e) => {
     setCheckedEmoji(e.target.value);
