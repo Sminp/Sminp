@@ -100,7 +100,7 @@ export default function Emoji({ tempEmoji, onClick }) {
     } else{
       setCheckedEmoji(emoji[0])
     }
-}, 10000
+}, 4000
 
   );
 
