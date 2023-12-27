@@ -94,7 +94,7 @@ export default function Emoji({ tempEmoji, onClick }) {
   const emoji = emojiList.filter((name) => name.emojiId === tempEmoji);
 
   setInterval(()=> {  
-    if(emoji===undefined || !emoji)
+    if(emoji[0]===undefined || !emoji)
     {
       setCheckedEmoji(emojiList[2])
       console.log('그냥')
