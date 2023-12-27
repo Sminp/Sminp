@@ -45,6 +45,7 @@ export default function HeaderContainer() {
   };
 
   if (params.postId) {
+    console.log(postId)
     return (
       <Header
         account={account}

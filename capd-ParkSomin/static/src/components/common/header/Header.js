@@ -74,7 +74,7 @@ export default function Header({
     }
   };
 
-  if (post !== '') {
+  if (post !== null) {
     return (
       <Wrapper $scroll={scroll} style={{  backgroundColor: `rgba(${post.r}, ${post.g}, ${post.b}, 1.0)`, }}>
         <HeaderBlock>
