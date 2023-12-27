@@ -93,7 +93,8 @@ export default function Emoji({ tempEmoji, onClick }) {
   // 배열로 저장
   const emoji = emojiList.filter((name) => name.emojiId === tempEmoji);
 
-  setInterval(()=> {  emoji ? setCheckedEmoji(emoji[0]) : setCheckedEmoji(emojiList[2])}, 3000
+  setInterval(()=> {  emoji ? setCheckedEmoji(emoji[0]) : setCheckedEmoji(emojiList[2])
+  console.log(checkedEmoji)}, 3000
 
   );
 
@@ -118,18 +119,18 @@ export default function Emoji({ tempEmoji, onClick }) {
           <div
             className="checked-emoji"
             style={{
-              backgroundImage: `url(${emoji.url})`,
+              backgroundImage: `url(${checkedEmoji.url})`,
               backgroundSize: 'cover',
             }}
           />
-          <EmojiName style={{ background: emoji.color }}>
-            {emoji.name}
+          <EmojiName style={{ background: checkedEmoji.color }}>
+            {checkedEmoji.name}
           </EmojiName>
         </div>
 
         <div className="explain">
-          <span>{emoji.text}</span>
-          <span>{emoji.tags}</span>
+          <span>{checkedEmoji.text}</span>
+          <span>{checkedEmoji.tags}</span>
         </div>
       </div>
       <div className="row">{others}</div>

@@ -174,7 +174,7 @@ export default function EditorContainer() {
         account: account,
         body: write.body,
       });
-      // console.log(promise);
+      console.log(promise);
 
       const getData = () => {
         promise.then((res) => {
