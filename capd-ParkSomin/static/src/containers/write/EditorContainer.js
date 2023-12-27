@@ -183,7 +183,6 @@ export default function EditorContainer() {
             url1: res.url1,
             url2: res.url2,
             url3: res.url3,
-            url4: res.url4,
             summed: res.summed,
           });
         });
