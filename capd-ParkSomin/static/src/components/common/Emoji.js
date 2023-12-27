@@ -97,10 +97,10 @@ export default function Emoji({ tempEmoji, onClick }) {
     if(emoji[0]===undefined || !emoji)
     {
       setCheckedEmoji(emojiList[2])
-      console.log('그냥')
+      console.log('그냥', emojiList[2])
     } else{
       setCheckedEmoji(emoji[0])
-      console.log('선택')
+      console.log('선택', emoji[0])
     }
   console.log(checkedEmoji)}, 3000
 
