@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { emojiList } from '../../lib/styles/constants';
 import { useState } from 'react';
+import styled from 'styled-components';
+import { emojiList } from '../../../lib/styles/constants'
 
 const EmojiBlock = styled.div`
   width: 100%;
@@ -92,17 +92,6 @@ export default function Emoji({ tempEmoji, onClick }) {
   const [checkedEmoji, setCheckedEmoji] = useState(emojiList[2])
   // 배열로 저장
   const emoji = emojiList.filter((name) => name.emojiId === tempEmoji);
-
-  setInterval(()=> {  
-    if(emoji[0]===undefined || !emoji)
-    {
-      setCheckedEmoji(emojiList[2])
-    } else{
-      setCheckedEmoji(emoji[0])
-    }
-}, 1000
-
-  );
 
   const others = emojiList.map((name) => {
     return (

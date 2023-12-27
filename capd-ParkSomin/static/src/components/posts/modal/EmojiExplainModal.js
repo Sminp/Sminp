@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Modal from '../../common/Modal';
-import Emoji from '../../common/Emoji';
+import Emoji from './Emoji';
 
 const Content = styled.div`
   width: 444px;
