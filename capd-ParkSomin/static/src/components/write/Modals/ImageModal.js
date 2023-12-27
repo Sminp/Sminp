@@ -153,7 +153,7 @@ export function AskModal({
   onClick,
   theme,
 }) {
-  const loading = ['1', '2', '3', '4'];
+  const loading = ['1', '2', '3'];
 
   if (!visible) return null;
   return (
