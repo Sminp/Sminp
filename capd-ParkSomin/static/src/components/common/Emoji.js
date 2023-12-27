@@ -109,6 +109,7 @@ export default function Emoji({ tempEmoji, onClick }) {
     <EmojiBlock>
       <div className="emoji-content">
         <div className="checked-emoji-block">
+          {checkedEmoji[0].url}
           <div
             className="checked-emoji"
             style={{

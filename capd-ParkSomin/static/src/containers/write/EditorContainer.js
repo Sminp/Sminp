@@ -19,6 +19,7 @@ export default function EditorContainer() {
   const getTheme = async ({ account, body }) => {
     try {
       const res = await client.post('/diary/getTheme', { account, body });
+      console.log(res)
       if (res.status === 200) {
         console.log('테마 가져오기 성공');
         return res.data;
