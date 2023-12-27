@@ -65,7 +65,7 @@ export default function PostViewerContainer() {
           id: params.postId,
           title: res.title,
           body: res.body,
-          emoji: res.emoji,
+          sentiment: res.sentiment,
           updatedAt: res.updatedAt,
           theme: res.theme,
           summed: res.summed,
@@ -73,14 +73,14 @@ export default function PostViewerContainer() {
       });
     };
     console.log(post.theme);
-    if (post.emoji === '') {
+    if (post.sentiment === '') {
       setPost({
         ...post,
-        emoji: 'Happy',
+        sentiment: 'happiness',
       });
     }
 
-    console.log(post.emoji);
+    console.log(post.sentiment);
 
     getData();
     // 언마운트될 때 리덕스에서 포스트 데이터 없애기

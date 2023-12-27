@@ -177,6 +177,7 @@ export default function EditorContainer() {
 
       const getData = () => {
         promise.then((res) => {
+          console.log('data', res)
           setWrite({
             ...write,
             b:res.b,
