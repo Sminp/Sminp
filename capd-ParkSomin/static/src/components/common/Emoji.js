@@ -93,7 +93,15 @@ export default function Emoji({ tempEmoji, onClick }) {
   // 배열로 저장
   const emoji = emojiList.filter((name) => name.emojiId === tempEmoji);
 
-  setInterval(()=> {  emoji ? setCheckedEmoji(emoji[0]) : setCheckedEmoji(emojiList[2])
+  setInterval(()=> {  
+    if(emoji===undefined || !emoji)
+    {
+      setCheckedEmoji(emojiList[2])
+      console.log('그냥')
+    } else{
+      setCheckedEmoji(emoji[0])
+      console.log('선택')
+    }
   console.log(checkedEmoji)}, 3000
 
   );
