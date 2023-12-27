@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { emojiList } from '../../lib/styles/constants';
+import { useState } from 'react';
 
 const EmojiBlock = styled.div`
   width: 100%;
@@ -88,8 +89,11 @@ const EmojiName = styled.div`
 `;
 
 export default function Emoji({ tempEmoji, onClick }) {
+  const [checkedEmoji, setCheckedEmoji] = useState(tempEmoji)
   // 배열로 저장
-  const checkedEmoji = emojiList.filter((name) => name.emojiId === tempEmoji);
+  const emoji = emojiList.filter((name) => name.emojiId === tempEmoji);
+
+  emoji ? setCheckedEmoji(emoji[0]) : setCheckedEmoji(emojiList[2])
 
   const others = emojiList.map((name) => {
     return (
@@ -109,22 +113,21 @@ export default function Emoji({ tempEmoji, onClick }) {
     <EmojiBlock>
       <div className="emoji-content">
         <div className="checked-emoji-block">
-          {checkedEmoji[0].url}
           <div
             className="checked-emoji"
             style={{
-              backgroundImage: `url(${checkedEmoji[0].url})`,
+              backgroundImage: `url(${emoji.url})`,
               backgroundSize: 'cover',
             }}
           />
-          <EmojiName style={{ background: checkedEmoji[0].color }}>
-            {checkedEmoji[0].name}
+          <EmojiName style={{ background: emoji.color }}>
+            {emoji.name}
           </EmojiName>
         </div>
 
         <div className="explain">
-          <span>{checkedEmoji[0].text}</span>
-          <span>{checkedEmoji[0].tags}</span>
+          <span>{emoji.text}</span>
+          <span>{emoji.tags}</span>
         </div>
       </div>
       <div className="row">{others}</div>
