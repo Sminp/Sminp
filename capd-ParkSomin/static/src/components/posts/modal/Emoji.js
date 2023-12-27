@@ -89,9 +89,8 @@ const EmojiName = styled.div`
 `;
 
 export default function Emoji({ tempEmoji, onClick }) {
-  const [checkedEmoji, setCheckedEmoji] = useState(tempEmoji)
   // 배열로 저장
-  const emoji = emojiList.filter((name) => name.emojiId === tempEmoji);
+  const checkedEmoji = emojiList.filter((name) => name.emojiId === tempEmoji);
 
   const others = emojiList.map((name) => {
     return (
@@ -114,18 +113,18 @@ export default function Emoji({ tempEmoji, onClick }) {
           <div
             className="checked-emoji"
             style={{
-              backgroundImage: `url(${checkedEmoji.url})`,
+              backgroundImage: `url(${checkedEmoji[0].url})`,
               backgroundSize: 'cover',
             }}
           />
-          <EmojiName style={{ background: checkedEmoji.color }}>
+          <EmojiName style={{ background: checkedEmoji[0].color }}>
             {checkedEmoji.name}
           </EmojiName>
         </div>
 
         <div className="explain">
-          <span>{checkedEmoji.text}</span>
-          <span>{checkedEmoji.tags}</span>
+          <span>{checkedEmoji[0].text}</span>
+          <span>{checkedEmoji[0].tags}</span>
         </div>
       </div>
       <div className="row">{others}</div>
