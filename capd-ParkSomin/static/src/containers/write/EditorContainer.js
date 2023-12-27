@@ -6,7 +6,7 @@ import { postState, postErrorState } from '../../State/postState';
 import { userAccount } from '../../State/userState';
 import client from '../../lib/api/client';
 
-const emojiArr = ['Angry', 'Fear', 'Happy', 'Love', 'Sad', 'PokerFace'];
+const emojiArr = ['anger', 'fear', 'happiness', 'disgust', 'sad', 'neutral'];
 
 export default function EditorContainer() {
   const account = useRecoilValue(userAccount);
@@ -34,12 +34,12 @@ export default function EditorContainer() {
     }
   };
 
-  const writePost = async ({ title, body, emoji, summed, theme, account }) => {
+  const writePost = async ({ title, body, sentiment, summed, theme, account }) => {
     try {
       const res = await client.post('/diary/new', {
         title,
         body,
-        emoji,
+        sentiment,
         summed,
         theme,
         account,
@@ -63,7 +63,7 @@ export default function EditorContainer() {
   const updatePost = async ({
     title,
     body,
-    emoji,
+    sentiment,
     summed,
     theme,
     account,
@@ -73,7 +73,7 @@ export default function EditorContainer() {
       const res = await client.post('/diary/rewrite', {
         title,
         body,
-        emoji,
+        sentiment,
         summed,
         theme,
         account,
@@ -107,7 +107,7 @@ export default function EditorContainer() {
     if (emojiArr.includes(e.target.value)) {
       setWrite({
         ...write,
-        emoji: e.target.value,
+        sentiment: e.target.value,
       });
     } else {
       setWrite({
@@ -124,7 +124,7 @@ export default function EditorContainer() {
         updatePost({
           title: write.title,
           body: write.body,
-          emoji: write.emoji,
+          sentiment: write.sentiment,
           theme: write.theme,
           summed: write.summed,
           account: account,
@@ -139,7 +139,7 @@ export default function EditorContainer() {
         const promise = writePost({
           title: write.title,
           body: write.body,
-          emoji: write.emoji,
+          sentiment: write.sentiment,
           theme: write.theme,
           summed: write.summed,
           account: account,
@@ -180,6 +180,10 @@ export default function EditorContainer() {
         promise.then((res) => {
           setWrite({
             ...write,
+            b:res.b,
+            g:res.g,
+            r:res.r,
+            sentiment: res.sentiment,
             url1: res.url1,
             url2: res.url2,
             url3: res.url3,
@@ -219,7 +223,7 @@ export default function EditorContainer() {
       onPublish={onPublish}
       onTheme={onTheme}
       onCancel={onCancel}
-      tempEmoji={write.emoji}
+      tempEmoji={write.sentiment}
     />
   );
 }

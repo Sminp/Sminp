@@ -1,6 +1,6 @@
 export const emojiList = [
   {
-    emojiId: 'Angry',
+    emojiId: 'anger',
     name: '화난 구슬',
     color: '#EC8C4F',
     url: `${process.env.PUBLIC_URL}/images/Emoji/Angry.svg`,
@@ -8,7 +8,7 @@ export const emojiList = [
     tags: '#분노 #억울함 #화남',
   },
   {
-    emojiId: 'Fear',
+    emojiId: 'fear',
     name: '공포 구슬',
     color: '#DDDDDB',
     url: `${process.env.PUBLIC_URL}/images/Emoji/Fear.svg`,
@@ -16,7 +16,7 @@ export const emojiList = [
     tags: '#공포 #무서움 #두려움',
   },
   {
-    emojiId: 'Happy',
+    emojiId: 'happiness',
     name: '행복 구슬',
     color: '#FFDA5B',
     url: `${process.env.PUBLIC_URL}/images/Emoji/Happy.svg`,
@@ -24,15 +24,15 @@ export const emojiList = [
     tags: '#행복 #즐거움 #신남',
   },
   {
-    emojiId: 'Love',
-    name: '사랑 구슬',
+    emojiId: 'disgust',
+    name: '역겨운 구슬',
     color: '#E463E7',
     url: `${process.env.PUBLIC_URL}/images/Emoji/Love.svg`,
-    text: '"저는 사랑에 빠졌어요!"',
-    tags: '#사랑 #좋아함 #애정',
+    text: '"저는 기분이 안좋아요!"',
+    tags: '#기분나쁨 #혐오 #역겨움',
   },
   {
-    emojiId: 'Sad',
+    emojiId: 'sad',
     name: '슬픈 구슬',
     color: '#5F98E3',
     url: `${process.env.PUBLIC_URL}/images/Emoji/Sad.svg`,
@@ -40,7 +40,7 @@ export const emojiList = [
     tags: '#슬픔 #우울함 #눈물',
   },
   {
-    emojiId: 'PokerFace',
+    emojiId: 'neutral',
     name: '무표정 구슬',
     color: '#47E470',
     url: `${process.env.PUBLIC_URL}/images/Emoji/PokerFace.svg`,

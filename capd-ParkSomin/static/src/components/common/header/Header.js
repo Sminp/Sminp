@@ -74,9 +74,9 @@ export default function Header({
     }
   };
 
-  if (post !== null) {
+  if (post.r !== '') {
     return (
-      <Wrapper $scroll={scroll} style={{ background: { post } }}>
+      <Wrapper $scroll={scroll} style={{  backgroundColor: `rgba(${post.r}, ${post.g}, ${post.b}, 1.0)`, }}>
         <HeaderBlock>
           <LogoButton to={`/${account}`} onClick={onUnload}>
             <div />
