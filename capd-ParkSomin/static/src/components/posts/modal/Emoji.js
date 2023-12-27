@@ -118,7 +118,7 @@ export default function Emoji({ tempEmoji, onClick }) {
             }}
           />
           <EmojiName style={{ background: checkedEmoji[0].color }}>
-            {checkedEmoji.name}
+            {checkedEmoji[0].name}
           </EmojiName>
         </div>
 
