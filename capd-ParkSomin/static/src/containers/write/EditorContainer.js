@@ -34,7 +34,7 @@ export default function EditorContainer() {
     }
   };
 
-  const writePost = async ({ title, body, sentiment, summed, theme, account }) => {
+  const writePost = async ({ title, body, sentiment, summed, theme, account, r, g, b }) => {
     try {
       const res = await client.post('/diary/new', {
         title,
@@ -43,6 +43,7 @@ export default function EditorContainer() {
         summed,
         theme,
         account,
+        r, g, b,
       });
       if (res.status === 200) {
         console.log('글 작성 성공');
@@ -68,6 +69,7 @@ export default function EditorContainer() {
     theme,
     account,
     id,
+    r, g, b,
   }) => {
     try {
       const res = await client.post('/diary/rewrite', {
@@ -78,6 +80,9 @@ export default function EditorContainer() {
         theme,
         account,
         id,
+        r,
+        g,
+        b,
       });
       if (res.status === 200) {
         console.log('글 수정 성공!');
@@ -110,9 +115,16 @@ export default function EditorContainer() {
         sentiment: e.target.value,
       });
     } else {
+      const bList = write.b.split('/');
+      const gList = write.g.split('/');
+      const rList = write.r.split('/');
+      console.log(e.target.key)
       setWrite({
         ...write,
         theme: e.target.value,
+        b: bList[e.target.key],
+        g: gList[e.target.key],
+        r: rList[e.target.key],
       });
     }
   };
@@ -129,6 +141,9 @@ export default function EditorContainer() {
           summed: write.summed,
           account: account,
           id: write.id,
+          r: write.r,
+          g: write.g,
+          b: write.b,
         });
       } else {
         setWrite({
@@ -139,91 +154,4 @@ export default function EditorContainer() {
           title: write.title,
           body: write.body,
           sentiment: write.sentiment,
-          theme: write.theme,
-          summed: write.summed,
-          account: account,
-        });
-        console.log(promise);
-
-        const getData = () => {
-          promise.then((res) => {
-            console.log(res);
-            setWrite({
-              ...write,
-              id: res.id,
-            });
-          });
-        };
-        getData();
-      }
-      return setPost({ error: false });
-    } catch (e) {
-      setPost({ error: true });
-    }
-  };
-
-  // 취소
-  const onCancel = () => {
-    navigate(-1);
-  };
-
-  const onTheme = () => {
-    try {
-      const promise = getTheme({
-        account: account,
-        body: write.body,
-      });
-      console.log('테마 생성 중입니다',promise);
-
-      const getData = () => {
-        promise.then((res) => {
-          console.log('data', res)
-          setWrite({
-            ...write,
-            b:res.b,
-            g:res.g,
-            r:res.r,
-            sentiment: res.sentiment,
-            url1: res.url1,
-            url2: res.url2,
-            url3: res.url3,
-            summed: res.summed,
-          });
-        });
-      };
-      getData();
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  // 성공 혹은 실패 시 할 작업
-  // 수정
-  useEffect(() => {
-    if (post.error === true) {
-      console.log(post.error);
-    } else if (post.error === false) {
-      console.log('성공');
-      console.log('1', write.id, '2', postId);
-      if (write.id) {
-        navigate(`/${account}/${write.id}`);
-      } else {
-        navigate(`/${account}/${postId}`);
-      }
-      // window.location.reload();
-      // reset();
-    }
-    setPost({ error: null });
-  }, [post.error]);
-
-  return (
-    <WriteForm
-      post={write}
-      onChangeField={onChangeField}
-      onPublish={onPublish}
-      onTheme={onTheme}
-      onCancel={onCancel}
-      tempEmoji={write.sentiment}
-    />
-  );
-}
+          theme: wri
