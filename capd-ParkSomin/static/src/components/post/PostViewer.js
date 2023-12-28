@@ -95,6 +95,7 @@ export default function PostViewer({ account, post, onEdit, onRemove }) {
       }}
     >
       <PostHead>
+        <div style={{widht: '100%', height: '100%', backgroundColor: `rgba(${post.r}, ${post.g}, ${post.b}, 1.0)`}}>
         <div>
           <div className="category">{`${post.updatedAt.slice(
             0,
@@ -104,6 +105,7 @@ export default function PostViewer({ account, post, onEdit, onRemove }) {
             {account}님의 마음구슬은 <span>{emojiList[emojiIndex].name}</span>
             이에요.
           </div>
+        </div>
         </div>
         <Updates onEdit={onEdit} onRemove={onRemove} />
       </PostHead>
