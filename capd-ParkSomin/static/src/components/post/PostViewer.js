@@ -95,7 +95,6 @@ export default function PostViewer({ account, post, onEdit, onRemove }) {
       }}
     >
       <PostHead style={{backgroundColor: `rgba(${post.r}, ${post.g}, ${post.b}, 1.0)`}}>
-        <div style={{widht: '100%', height: '10000', backgroundColor: `rgba(${post.r}, ${post.g}, ${post.b}, 1.0)`}}>
         <div>
           <div className="category">{`${post.updatedAt.slice(
             0,
@@ -107,7 +106,6 @@ export default function PostViewer({ account, post, onEdit, onRemove }) {
           </div>
         </div>
         <Updates onEdit={onEdit} onRemove={onRemove} />
-        </div>
       </PostHead>
       <Contents>
         <div className="title" style={{ borderBottom: `2px solid #353535` }}>
