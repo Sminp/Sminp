@@ -65,13 +65,13 @@ export default function PostViewerContainer() {
           id: params.postId,
           title: res.title,
           body: res.body,
-          b: res.b,
-          g: res.g,
-          r: res.r,
           sentiment: res.sentiment,
           updatedAt: res.updatedAt,
           theme: res.theme,
           summed: res.summed,
+          r: res.r,
+          g: res.g,
+          b: res.b,
         });
       });
     };
