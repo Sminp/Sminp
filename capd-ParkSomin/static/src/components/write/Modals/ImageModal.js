@@ -195,6 +195,7 @@ export function AskModal({
                   return (
                     <button
                       key={idx}
+                      data-key={idx}
                       onClick={onClick}
                       style={{
                         backgroundImage: `url(${theme})`,

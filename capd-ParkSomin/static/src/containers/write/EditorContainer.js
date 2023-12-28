@@ -118,13 +118,14 @@ export default function EditorContainer() {
       const bList = write.b.split('/');
       const gList = write.g.split('/');
       const rList = write.r.split('/');
-      console.log(e.target.key)
+      const eKey = e.target.dataset.key;
+      console.log(eKey)
       setWrite({
         ...write,
         theme: e.target.value,
-        b: bList[e.target.key],
-        g: gList[e.target.key],
-        r: rList[e.target.key],
+        b: bList[eKey],
+        g: gList[eKey],
+        r: rList[eKey],
       });
     }
   };
