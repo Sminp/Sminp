@@ -1,4 +1,4 @@
-# 👩‍💻 박소민 | Frontend Developer
+# 👩‍💻 박소민 | Software Engineer
 
 안녕하세요!  
 기획–디자인–개발–배포 전 과정을 경험하며, **UX/UI 중심의 개발**에 강점을 가진 박소민입니다.  
